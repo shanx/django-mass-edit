@@ -337,7 +337,7 @@ class MassAdmin(admin.ModelAdmin):
         #    media = media + inline_admin_formset.media
 
         context = {
-            'title': _('Change %s') % force_text(opts.verbose_name),
+            'title': _('Change %s') % force_text(opts.verbose_name_plural),
             'adminform': adminForm,
             'object_id': object_id,
             'original': obj,
