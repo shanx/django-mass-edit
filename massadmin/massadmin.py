@@ -338,9 +338,11 @@ class MassAdmin(admin.ModelAdmin):
 
         context = {
             'title': _('Change %s') % force_text(opts.verbose_name_plural),
+            'model_name': opts.verbose_name,
             'adminform': adminForm,
             'object_id': object_id,
             'original': obj,
+            'objects': queryset.filter(pk__in=object_ids),
             'unique_fields': unique_fields,
             'exclude_fields': exclude_fields,
             'is_popup': '_popup' in request.GET or '_popup' in request.POST,
